@@ -1,0 +1,45 @@
+<!-- <p>teacher works!</p> -->
+
+<h2>Add Teacher</h2>
+<form [formGroup]="teacherForm">
+    <label>Teacher Name: </label>
+    <input type="text" formControlName="teacherName">
+    <label>Age: </label>
+    <input type="number" formControlName="age">
+    <label>Experience: </label>
+    <input type="text" formControlName="experience">
+    <label>Address: </label>
+    <input type="text" formControlName="address">
+    <label>Skill: </label>
+    <input type="text" formControlName="skillSet">
+    <button (click)="saveTeacher()">Save</button>
+</form>
+
+<p>Teacher Data</p>
+<table border="1" cellpadding="5" cellspacing="0">
+   <thead>
+      <tr>
+         <th>ID</th>
+         <th>Teacher Name</th>
+         <th>Age</th>
+         <th>Experience</th>
+         <th>Address</th>
+         <th>Skill</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let teacher of teacherData">
+         <td>{{ teacher.teacherId }}</td> 
+         <td>{{ teacher.teacherName }}</td>
+         <td>{{ teacher.age }}</td>
+         <td>{{ teacher.experience }}</td>
+         <td>{{ teacher.address }}</td>
+         <td>{{ teacher.skillSet }}</td>
+         <td>
+            <button (click)="editTeacher(teacher)">Edit</button>
+            <button (click)="deleteTeacher(teacher.teacherId)">Delete</button>
+         </td>
+      </tr>
+   </tbody>
+</table>

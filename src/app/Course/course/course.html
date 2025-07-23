@@ -20,12 +20,12 @@
    </thead>
    <tbody>
       <tr *ngFor="let course of courseData">
-      <td>{{ course.id }}</td> 
-      <td>{{ course.courseName }}</td>
-      <td>
-      <button (click)="editCourse(course)">Edit</button>
-      <button (click)="deleteCourse(course.id)">Delete</button>
-    </td>
+         <td>{{ course.id }}</td> 
+         <td>{{ course.courseName }}</td>
+         <td>
+            <button (click)="editCourse(course)">Edit</button>
+            <button (click)="deleteCourse(course.id)">Delete</button>
+         </td>
       </tr>
    </tbody>
 </table>

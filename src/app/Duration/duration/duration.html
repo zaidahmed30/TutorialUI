@@ -1,0 +1,28 @@
+<!-- <p>duration works!</p> -->
+ <h2>Add Duration</h2>
+<form [formGroup]="durationForm">
+   <label>Days: </label>
+   <input type="text" formControlName="days" class="formControlName">
+   <button (click)="saveDuration()">Save</button>
+</form>
+
+<p>Duration Data</p>
+<table border="1" cellpadding="5" cellspacing="0">
+   <thead>
+      <tr>
+         <th>ID</th>
+         <th>Days</th>
+         <th>Action</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let duration of durationData">
+         <td>{{ duration.durationId }}</td> 
+         <td>{{ duration.days }}</td>
+         <td>
+            <button (click)="editDuration(duration)">Edit</button>
+            <button (click)="deleteDuration(duration.durationId)">Delete</button>
+         </td>
+      </tr>
+   </tbody>
+</table>
